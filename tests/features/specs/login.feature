@@ -4,6 +4,8 @@ Funcionalidade: Realizar login em um site
 - Eu como usuário
 - Desejo realizar login no site
 
+@realizar_logout
+
 Cenario: Realizar Login em um site com dados válidos
 
 Dado que eu possuo cadastro no site
