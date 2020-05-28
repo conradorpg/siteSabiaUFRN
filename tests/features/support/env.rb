@@ -3,6 +3,7 @@ require 'capybara/dsl'
 require 'capybara/rspec/matchers'
 require 'selenium-webdriver'
 require 'rspec'
+require 'site_prism'
 
 World(Capybara::DSL)
 World(Capybara::RSpecMatchers)
