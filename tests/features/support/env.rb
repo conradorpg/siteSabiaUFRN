@@ -5,6 +5,7 @@ require 'selenium-webdriver'
 require 'rspec'
 require 'site_prism'
 require_relative 'page_helper.rb'
+require_relative 'helper.rb'
 
 World(Capybara::DSL)
 World(Capybara::RSpecMatchers)
@@ -19,20 +20,20 @@ CONFIG = YAML.load_file(File.dirname(__FILE__) +
 
 Capybara.register_driver :selenium do |app|
 
-    if HEADLESS.eql?('without_headless')
+    if HEADLESS.eql?('headless_no')
         Capybara::Selenium::Driver.new(
             app,
             browser: :chrome,
             desired_capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(
-                'chromeOptions' => {'args' => ['--disable-infobars', 'window-size=1600, 1024']}
+                'chromeOptions' => {'args' => ['--disable-infobars', '--window-size=1600,1024']}
             )
         )
-    elsif HEADLESS.eql?('with_headless')
+    elsif HEADLESS.eql?('headless_yes')
         Capybara::Selenium::Driver.new(
             app,
             browser: :chrome,
             desired_capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(
-                'chromeOptions' => {'args' => ['headless', 'disable-gpu', '--disable-infobars', 'window-size=1600, 1024']}
+                'chromeOptions' => {'args' => ['headless', 'disable-gpu', '--disable-infobars', '--window-size=1600,1024']}
             )
         )
     end

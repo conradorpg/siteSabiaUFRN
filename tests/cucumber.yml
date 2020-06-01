@@ -1,9 +1,11 @@
 ## YAML Templates
 ---
 
-default: -p progress -p homolog -p with_headless
+default: -p progress -p homolog -p html -p headless_yes
+#default: -p pretty -p homolog -p html -p headless_no
 pretty: --format pretty
 progress: --format progress
 homolog: ENVIRONMENT_TYPE=homolog
-with_headless: HEADLESS=with_headless
-without_headless: HEADLESS=without_headless
+html: --format html --out=results/report.html
+headless_yes: HEADLESS=headless_yes
+headless_no: HEADLESS=headless_no
