@@ -1,3 +1,3 @@
-Exemplo de automação utilizando framework Capybara
-Assim que possível escrevo um informe sobre.
+Automação de Login no site https://login.sabia.ufrn.br/ utilizando Framework Capybara com Selenium.
+
 
